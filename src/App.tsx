@@ -1,7 +1,16 @@
+//Componetns
+import ControlPanel from "./components/ControlPanel";
+import StoreDetails from "./components/StoreDetails";
+import BooksView from "./components/BooksView";
+import ReadList from "./components/ReadList";
+
 function App() {
   return (
     <>
-      <h1>Hello dev</h1>
+      <StoreDetails />
+      <ControlPanel />
+      <BooksView view={true} />
+      <ReadList view={false} />
     </>
   );
 }
