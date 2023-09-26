@@ -39,6 +39,7 @@ export default function ControlPanel() {
             callback={() => {
               addFilter(gender);
             }}
+            id={index}
             key={index}
           >
             {gender}
@@ -53,8 +54,9 @@ export default function ControlPanel() {
         <input
           type="number"
           name="pag-filter"
+          max={1000}
           placeholder="0"
-          className="w-10 text-center text-lg rounded-sm border-2"
+          className="w-12 text-center text-black text-lg rounded-sm border-2"
         />
       </div>
     </section>
