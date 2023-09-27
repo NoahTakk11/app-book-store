@@ -1,27 +1,16 @@
-# React + TypeScript + Vite
+# Autor Gonzalo Villavicencio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Portfolio Web --> https://gonzalovillavicencio.website/
 
-Currently, two official plugins are available:
+# App Web Book Store
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta es una aplicación sencilla con algunas funcionalidades implementadas a modod de práctica, cuenta con:
 
-## Expanding the ESLint configuration
+- Visualización de libros disponibles.
+- Filtrado de libros por género.
+- Filtrado de libros por número de páginas.
+- Sincronización de pestañas para el filtrado de libros.
+- Funcionalidad para guardar los libros en una lista de lectura.
+- Conteo de libros disponibles y libros alamcenados en lista de lectura.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Se utilizó ReactJs junto con TypeScript en Vite para desarrollar esta app.
