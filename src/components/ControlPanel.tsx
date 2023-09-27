@@ -1,17 +1,20 @@
 import { GENDERS } from "../constants/books";
 import { useBoookStore } from "../zustand/booksStore";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 //Components
 import FilterButton from "./FilterButton";
 
 export default function ControlPanel() {
+  const [inputNumberPages, setInputNumberPages] = useState(0);
   const {
-    updateRenderBooks,
+    updateRenderBooksByGenders,
     resetRenderList,
     updateGendersList,
     deleteGender,
+    updateRenderBooksByPages,
     genderList,
+    viewDetails,
   } = useBoookStore();
 
   const addFilter = (gender: string) => {
@@ -27,13 +30,41 @@ export default function ControlPanel() {
     if (genderList.length === 0) {
       return resetRenderList();
     }
-    updateRenderBooks(genderList);
-  }, [updateRenderBooks, resetRenderList, genderList]);
+    updateRenderBooksByGenders(genderList);
+  }, [updateRenderBooksByGenders, resetRenderList, genderList]);
+
+  useEffect(() => {
+    const inputFilter = document.getElementById(
+      "filter-pages"
+    ) as HTMLInputElement;
+
+    const handleInput = (event: Event) => {
+      resetRenderList();
+      const inputValue = (event.target as HTMLInputElement).value;
+      if (inputValue) {
+        const numberPages = parseInt(inputValue, 10);
+        setInputNumberPages(numberPages);
+        updateRenderBooksByPages(numberPages);
+      }
+    };
+
+    inputFilter?.addEventListener("input", handleInput);
+
+    return () => {
+      inputFilter?.removeEventListener("input", handleInput);
+    };
+  }, [updateRenderBooksByPages, inputNumberPages, resetRenderList]);
 
   return (
-    <section className="flex flex-col p-5">
-      <p>Puedes filtrar por género y número de páginas</p>
-      <div className="flex flex-row gap-1 mt-1">
+    <section className="flex flex-col p-5 items-center justify-center">
+      <p className={`${viewDetails ? "hidden" : "block"}`}>
+        Puedes filtrar por género y número de páginas
+      </p>
+      <div
+        className={`flex flex-row gap-1 mt-1 ${
+          viewDetails ? "hidden" : "block"
+        }`}
+      >
         {GENDERS.map((gender, index) => (
           <FilterButton
             callback={() => {
@@ -47,11 +78,16 @@ export default function ControlPanel() {
         ))}
       </div>
 
-      <div className="flex flex-row gap-1 items-center mt-10">
+      <div
+        className={`flex flex-row gap-1 items-center mt-10 ${
+          viewDetails ? "hidden" : "block"
+        }`}
+      >
         <label htmlFor="pag-filter" className="text-lg">
           Minimo de páginas:
         </label>
         <input
+          id="filter-pages"
           type="number"
           name="pag-filter"
           max={1000}
