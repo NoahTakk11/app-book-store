@@ -4,7 +4,7 @@
 
 # App Web Book Store
 
-Esta es una aplicación sencilla con algunas funcionalidades implementadas a modod de práctica, cuenta con:
+Esta es una aplicación sencilla con algunas funcionalidades implementadas a modo de práctica, cuenta con:
 
 - Visualización de libros disponibles.
 - Filtrado de libros por género.
