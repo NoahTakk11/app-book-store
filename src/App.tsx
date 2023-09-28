@@ -6,7 +6,7 @@ import ControlPanel from "./components/ControlPanel";
 import StoreDetails from "./components/StoreDetails";
 import BooksView from "./components/BooksView";
 import ReadList from "./components/ReadList";
-import BookDetails from "./components/BookDatails";
+import BookDetails from "./components/BookDetails";
 
 function App() {
   const [view, setView] = useState(true);
