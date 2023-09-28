@@ -55,7 +55,7 @@ export default function BooksView(props: Props) {
             <img
               src={item.book.cover}
               alt={item.book.title}
-              className={`w-40 md:h-60 rounded-sm border-2 ${
+              className={`w-40 md:h-60 rounded-sm border-2 shadow-lg shadow-black ${
                 readList.includes(item.book) ? "filter brightness-50" : ""
               }`}
             />
@@ -65,7 +65,7 @@ export default function BooksView(props: Props) {
                   updateViewDetails(true);
                   updateBookDetails(item.book);
                 }}
-                className="text-sm mt-2 rounded-lg border-2 p-1 font-medium bg-blue-600"
+                className="text-sm mt-2 rounded-2xl border-2 p-1 font-medium bg-blue-400 text-slate-900"
               >
                 Detalles
               </button>
@@ -74,9 +74,8 @@ export default function BooksView(props: Props) {
                   addBookToList(item.book);
                 }}
                 disabled={readList.includes(item.book)}
-                id="btn-add"
-                className={`text-sm mt-2 rounded-lg border-2 p-1 font-medium ${
-                  readList.includes(item.book) ? "bg-red-800" : " bg-blue-600"
+                className={`text-sm mt-2 rounded-2xl border-2 p-1 font-medium text-slate-900 ${
+                  readList.includes(item.book) ? "bg-red-400" : " bg-blue-400"
                 }`}
               >
                 {readList.includes(item.book) ? "En Lista" : "Añadir a Lista"}

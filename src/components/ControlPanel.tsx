@@ -18,12 +18,18 @@ export default function ControlPanel() {
   } = useBoookStore();
 
   const addFilter = (gender: string) => {
-    if (genderList.includes(gender)) {
-      deleteGender(gender);
+    if (genderList === gender) {
+      deleteGender();
       resetRenderList();
     } else {
+      resetRenderList();
       updateGendersList(gender);
     }
+  };
+
+  const resetFilters = () => {
+    deleteGender();
+    resetRenderList();
   };
 
   useEffect(() => {
@@ -65,6 +71,9 @@ export default function ControlPanel() {
           viewDetails ? "hidden" : "block"
         }`}
       >
+        <FilterButton callback={resetFilters} id={5}>
+          Ver todos
+        </FilterButton>
         {GENDERS.map((gender, index) => (
           <FilterButton
             callback={() => {
@@ -92,7 +101,7 @@ export default function ControlPanel() {
           name="pag-filter"
           max={1000}
           placeholder="0"
-          className="w-12 text-center text-black text-lg rounded-sm border-2"
+          className="w-16 text-center text-black text-lg rounded-sm border-2"
         />
       </div>
     </section>
