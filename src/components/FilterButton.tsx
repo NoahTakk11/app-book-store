@@ -31,7 +31,7 @@ export default function FilterButton(props: Props) {
       onClick={() => {
         props.callback();
       }}
-      className={`text-sm font-medium bg-green-400 rounded-2xl p-1 text-slate-900 border-[#414654] border-2 ${"bg-green-400"}`}
+      className="focus:outline-none text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-1 py-1 mr-2 mb-2 "
     >
       {props.children}
     </button>

@@ -27,7 +27,7 @@ export default function BookDetails(props: Props) {
       <p className="text-md text-start mt-2 px-2">{bookDetails?.synopsis}</p>
       <button
         onClick={() => updateViewDetails(false)}
-        className="flex items-center justify-center font-medium rounded-lg border-2 bg-blue-600 p-1 mx-6 mt-4 mb-20 md:mx-0"
+        className="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 mr-2 mb-2 mt-2"
       >
         Volver
       </button>

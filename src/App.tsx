@@ -22,7 +22,7 @@ function App() {
       <div className="flex flex-col items-start justify-center md:text-left">
         <button
           onClick={handleButtonClick}
-          className={`font-medium rounded-2xl border-2 bg-blue-400 p-1 mx-2 md:ml-0 text-slate-900 ${
+          className={`ml-2 text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 mr-2 mb-2 mt-2 ${
             viewDetails ? "hidden" : "block"
           }`}
         >

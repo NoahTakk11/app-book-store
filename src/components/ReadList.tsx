@@ -18,7 +18,7 @@ export default function ReadList(props: Props) {
             <button
               onClick={() => deleteToList(item)}
               id="btn-add"
-              className="flex flex-col m-auto  mt-2 rounded-lg border-2 p-1 font-medium bg-red-400"
+              className="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 "
             >
               Borrar de lista
             </button>

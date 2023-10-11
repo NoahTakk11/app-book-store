@@ -65,7 +65,7 @@ export default function BooksView(props: Props) {
                   updateViewDetails(true);
                   updateBookDetails(item.book);
                 }}
-                className="text-sm mt-2 rounded-2xl border-2 p-1 font-medium bg-blue-400 text-slate-900"
+                className="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 mr-2 mb-2 mt-2"
               >
                 Detalles
               </button>
@@ -74,11 +74,11 @@ export default function BooksView(props: Props) {
                   addBookToList(item.book);
                 }}
                 disabled={readList.includes(item.book)}
-                className={`text-sm mt-2 rounded-2xl border-2 p-1 font-medium text-slate-900 ${
+                className={`text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 mr-2 mb-2 mt-2 ${
                   readList.includes(item.book) ? "bg-red-400" : " bg-blue-400"
                 }`}
               >
-                {readList.includes(item.book) ? "En Lista" : "Añadir a Lista"}
+                {readList.includes(item.book) ? "En Lista" : "Añadir"}
               </button>
             </div>
           </li>
